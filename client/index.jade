@@ -1,0 +1,33 @@
+head
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+body(style='background-color: rgb(135, 191, 114)')
+    if showMenu
+        +menu
+    button menu
+
+template(name='menu')
+    +first color=color isphone=isPhone
+    +second color=color isphone=isPhone
+    +third color=color isphone=isPhone
+
+template(name='first')
+    .menu.first.active(class=isphone style='{background-color: #{color}')
+        ul.first header1
+            li
+                a(href='/amarillo/') amarillo
+            li(next='second') rojo
+
+template(name='second')
+    .menu.second(class=isphone style='{background-color: #{color}')
+        ul.second header2
+            li
+                a(href='/casa/') casa
+            li(next='third') coche
+
+template(name='third')
+    .menu.third(class=isphone style='{background-color: #{color}')
+        ul.third header 2b
+            li
+                a(href='/coche/playa/') playa
+            li(next='first') montaña
