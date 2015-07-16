@@ -8,11 +8,13 @@ Template.menu.helpers
     else
       ''
 
-Template.body.helpers
-  showMenu: -> Session.get 'show'
+#Template.body.helpers
+#  showMenu: -> Session.get 'show'
 
 Template.menu.events
-  'click li': (e,t) ->
+  'click .close': (e, t) ->
+    Session.set 'show', false
+  'click .menu div': (e,t) ->
     next = $(e.target).attr('next')
     if next
       $('.menu.active').removeClass('active')
