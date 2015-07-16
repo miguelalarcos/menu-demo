@@ -4,7 +4,8 @@ head
 body(style='background-color: rgb(135, 191, 114)')
     //if Session 'show'
     +menu
-    button menu
+    h1
+        i.show.ion-navicon-round
 
 template(name='menu')
     +first color=color isphone=isPhone
@@ -15,7 +16,7 @@ template(name='first')
     .menu.first(class=isphone style='{background-color: #{color}')
         .nano
             .nano-content
-                h2.first header1
+                h2 header1
                     i.close.ion-close
                 div
                     a(href='/amarillo/') amarillo
@@ -25,7 +26,7 @@ template(name='second')
     .menu.second(class=isphone style='{background-color: #{color}')
         .nano
             .nano-content
-                h2.second header2
+                h2 header2
                     i.close.ion-close
                 div(next='first')
                     | &lt; back
@@ -37,7 +38,7 @@ template(name='third')
     .menu.third(class=isphone style='{background-color: #{color}')
         .nano
             .nano-content
-                h2.third header 2b
+                h2 header 2b
                     i.close.ion-close
                 div(next='second')
                     | &lt; back
