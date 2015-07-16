@@ -2,8 +2,8 @@ head
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
 body(style='background-color: rgb(135, 191, 114)')
-    if Session 'show'
-        +menu
+    //if Session 'show'
+    +menu
     button menu
 
 template(name='menu')
@@ -12,34 +12,35 @@ template(name='menu')
     +third color=color isphone=isPhone
 
 template(name='first')
-    .menu.first.active(class=isphone style='{background-color: #{color}')
-        //ul.first header1
-            i.close.ion-close
-            li
-                a(href='/amarillo/') amarillo
-            li(next='second') rojo >
-        h2.first header1
-            i.close.ion-close
-        div
-            a(href='/amarillo/') amarillo
-        div(next='second') rojo >
+    .menu.first(class=isphone style='{background-color: #{color}')
+        .nano
+            .nano-content
+                h2.first header1
+                    i.close.ion-close
+                div
+                    a(href='/amarillo/') amarillo
+                div(next='second') rojo >
 
 template(name='second')
     .menu.second(class=isphone style='{background-color: #{color}')
-        h2.second header2
-            i.close.ion-close
-        div(next='first')
-            | &lt; back
-        div
-            a(href='/casa/') casa
-        div(next='third') coche >
+        .nano
+            .nano-content
+                h2.second header2
+                    i.close.ion-close
+                div(next='first')
+                    | &lt; back
+                div
+                    a(href='/casa/') casa
+                div(next='third') coche >
 
 template(name='third')
     .menu.third(class=isphone style='{background-color: #{color}')
-        h2.third header 2b
-            i.close.ion-close
-        div(next='second')
-            | &lt; back
-        div
-            a(href='/coche/playa/') playa
-        div(next='first') montaña >
+        .nano
+            .nano-content
+                h2.third header 2b
+                    i.close.ion-close
+                div(next='second')
+                    | &lt; back
+                div
+                    a(href='/coche/playa/') playa
+                div(next='first') montaña >

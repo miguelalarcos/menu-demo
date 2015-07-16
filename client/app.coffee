@@ -1,4 +1,4 @@
-Session.set 'show', true
+Session.set 'show', false
 
 Template.menu.helpers
   color: -> Please.make_color()[0]
@@ -13,7 +13,8 @@ Template.menu.helpers
 
 Template.menu.events
   'click .close': (e, t) ->
-    Session.set 'show', false
+    #Session.set 'show', false
+    $('.menu.active').removeClass('active')
   'click .menu div': (e,t) ->
     next = $(e.target).attr('next')
     if next
@@ -22,4 +23,9 @@ Template.menu.events
 
 Template.body.events
   'click button': (e,t) ->
-    Session.set('show', not Session.get('show'))
+    #Session.set('show', not Session.get('show'))
+    #Meteor.setTimeout((-> $('.menu.first').addClass('active')), 1)
+    $('.menu.first').addClass('active')
+
+Template.menu.onRendered ->
+  $('.nano').nanoScroller(scroll: 'top')
